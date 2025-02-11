@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Haven: React.FC = () => {
@@ -16,15 +17,17 @@ const Haven: React.FC = () => {
           excite your taste buds and warm your heart. Step into our world of
           irresistible flavors and unforgettable moments!
         </p>
-        <Button
-          className="rounded-none border-[#CDAE64] bg-transparent px-9 py-7 text-center font-inter text-xs font-[300] uppercase tracking-[3px] text-[#fff] ring-1 ring-[#CDAE64] lg:tracking-[5px]"
-          style={{
-            WebkitTextStrokeWidth: "1px",
-            WebkitTextStrokeColor: "#cdae64",
-          }}
-        >
-          View Menu
-        </Button>
+        <Link href={"/menu"}>
+          <Button
+            className="rounded-none border-[#CDAE64] bg-transparent px-9 py-7 text-center font-inter text-xs font-[300] uppercase tracking-[3px] text-[#fff] ring-1 ring-[#CDAE64] lg:tracking-[5px]"
+            style={{
+              WebkitTextStrokeWidth: "1px",
+              WebkitTextStrokeColor: "#cdae64",
+            }}
+          >
+            View Menu
+          </Button>
+        </Link>
       </div>
     </section>
   );

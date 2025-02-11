@@ -67,15 +67,17 @@ const Contact = ({}) => {
 
   return (
     <section
-      className="flex h-full w-full flex-col items-center justify-center bg-[#0B1D37]"
+      className="flex h-full w-full flex-col items-center justify-center bg-[#070707]"
       id="contact"
     >
       <div className="flex h-full w-full max-w-[1300px] flex-col gap-[2.5rem] px-0 py-12 pl-0 md:px-2 md:py-24">
         <div className="flex w-full flex-col lg:flex-row">
-          <div className="flex w-full flex-col gap-8 bg-[#0B1D37] px-6 lg:w-1/2 lg:px-28">
+          <div className="flex w-full flex-col gap-8 bg-[#070707] px-6 lg:w-1/2 lg:px-28">
             <div className="flex flex-col gap-8">
-              <p className="font-bai text-lg leading-[4px]">Contact Us</p>
-              <h1 className="font-forum text-4xl font-medium uppercase leading-[50px] tracking-[5px] lg:text-5xl">
+              <p className="font-bai text-lg leading-[4px] text-[#FBEAD2]">
+                Contact Us
+              </p>
+              <h1 className="font-forum text-4xl font-medium uppercase leading-[50px] tracking-[5px] text-[#FBEAD2] lg:text-5xl">
                 Get in
                 <br /> Touch
               </h1>
@@ -84,7 +86,7 @@ const Contact = ({}) => {
               <div className="flex gap-6">
                 <div>
                   <div className="h-fit w-fit rounded-full p-2">
-                    <MapPin />
+                    <MapPin className="text-[#FBEAD2]" />
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
@@ -92,7 +94,7 @@ const Contact = ({}) => {
                     href={"https://maps.app.goo.gl/k1at2SBgQkyi6oCG8"}
                     target="_blank"
                   >
-                    <span className="">
+                    <span className="text-[#FBEAD2]">
                       117 Station Rd, London E4
                       <br /> 6AG, United Kingdom,
                     </span>
@@ -102,8 +104,8 @@ const Contact = ({}) => {
                     target="_blank"
                   >
                     <p className="flex items-center gap-2 text-sm">
-                      <span>Get Direction</span>
-                      <ArrowRight />
+                      <span className="text-[#FBEAD2]">Get Direction</span>
+                      <ArrowRight className="text-[#FBEAD2]" />
                     </p>
                   </Link>
                 </div>
@@ -135,7 +137,7 @@ const Contact = ({}) => {
                   href={"https://www.instagram.com/lavita_cafebistro/"}
                   target="_blank"
                 >
-                  <Icons.instagram />
+                  <Icons.instagram className="text-[#FBEAD2]" />
                 </Link>
                 <Link
                   href={
@@ -143,13 +145,13 @@ const Contact = ({}) => {
                   }
                   target="_blank"
                 >
-                  <Icons.unknown />
+                  <Icons.unknown className="text-[#FBEAD2]" />
                 </Link>
                 <Link
                   href={"https://maps.app.goo.gl/k1at2SBgQkyi6oCG8"}
                   target="_blank"
                 >
-                  <Icons.google />
+                  <Icons.google className="text-[#FBEAD2]" />
                 </Link>
                 {/* <Link href='https://www.facebook.com/Istanbulwoolton/'>
                   <Icons.facebook />
@@ -157,7 +159,7 @@ const Contact = ({}) => {
               </div>
             </div>
           </div>
-          <div className="flex w-full flex-col bg-[#0B1D37] lg:w-1/2 lg:items-center lg:justify-center">
+          <div className="flex w-full flex-col bg-[#070707] lg:w-1/2 lg:items-center lg:justify-center">
             <div className="w-full px-3 lg:w-4/5 lg:px-0">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="h-full">
@@ -216,7 +218,7 @@ const Contact = ({}) => {
                         name="message"
                         render={({ field }) => (
                           <FormItem className="w-full">
-                            <FormLabel>
+                            <FormLabel className="text-[#FBEAD2]">
                               Reason for contacting (optional)
                             </FormLabel>
                             <FormControl>
@@ -234,7 +236,7 @@ const Contact = ({}) => {
                   </div>
                   <div className="flex w-full flex-col pt-7 lg:flex-row">
                     <Button
-                      className="font-bai w-full rounded-2xl py-6 hover:bg-secondary"
+                      className="font-bai w-full rounded-2xl py-6 text-[#fff] hover:bg-secondary"
                       disabled={bookTableMutation.isPending}
                     >
                       Contact US

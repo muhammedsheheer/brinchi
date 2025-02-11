@@ -49,7 +49,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
             </Link>
             <Link href={"/table-booking"}>
               <Button className="flex flex-row gap-2 rounded-none bg-[#CDAE64] px-5 py-6 font-playfair text-sm font-[600] capitalize tracking-[1.2px] text-[#ffff] ring-1 ring-[#FBEAD2]">
-                Order Now <ArrowRight className="w-4 text-[#fff]" />
+                Table Booking <ArrowRight className="w-4 text-[#fff]" />
               </Button>
             </Link>
           </SheetDescription>

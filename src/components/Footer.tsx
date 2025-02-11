@@ -16,27 +16,27 @@ const Footer = ({}) => {
           </h2>
           <div className="flex flex-row gap-14 lg:gap-40">
             <div className="flex flex-col gap-3">
-              <Link href={""}>
+              <Link href={"/"}>
                 <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
                   Home
                 </span>
               </Link>
-              <Link href={""}>
+              <Link href={"/about-us"}>
                 <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
                   About
                 </span>
               </Link>
-              <Link href={""}>
+              <Link href={"/contact"}>
                 <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
                   Contact
                 </span>
               </Link>
-              <Link href={""}>
+              <Link href={"/table-booking"}>
                 <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
                   Booking
                 </span>
               </Link>
-              <Link href={""}>
+              <Link href={"/menu"}>
                 <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
                   Menu
                 </span>

@@ -145,8 +145,10 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-3">
-      <p className="text-3xl font-semibold text-black">Request a reservation</p>
-      <p className="text-black">
+      <p className="text-3xl font-semibold text-[#FBEAD2]">
+        Request a reservation
+      </p>
+      <p className="text-[#FBEAD2]">
         Select your details and we`ll try get the best seats for you
       </p>
       <Form {...form}>
@@ -154,31 +156,107 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex w-full flex-col items-center justify-center gap-2"
         >
-          <div className="flex w-full items-center justify-center">
-            <div className="grid w-full max-w-[624px] grid-cols-1 items-center justify-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid w-full max-w-[650px] grid-cols-1 gap-6 py-12 md:grid-cols-2">
+            <FormField
+              control={form.control}
+              name="guests"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-[#FBEAD2]">No of Guests</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger className="h-12 border-muted bg-transparent text-[#FBEAD2]">
+                        <SelectValue placeholder="Select guests" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent className="max-h-[300px]">
+                      {guestNumbers.map((num) => (
+                        <SelectItem
+                          key={num}
+                          value={num.toString()}
+                          className="text-[#000]"
+                        >
+                          {num} {num === 1 ? "Guest" : "Guests"}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="date"
+              render={({ field }) => (
+                <FormItem className="">
+                  <FormLabel className="text-[#FBEAD2]">Date</FormLabel>
+                  <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+                    <PopoverTrigger asChild>
+                      <FormControl>
+                        <Button
+                          variant={"outline"}
+                          className={`h-12 w-full justify-start border-muted bg-transparent text-left font-normal text-[#FBEAD2] hover:text-[#FBEAD2]`}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4 text-[#FBEAD2]" />
+                          {field.value ? (
+                            format(field.value, "PPP")
+                          ) : (
+                            <span className="text-[#FBEAD2]">Pick a date</span>
+                          )}
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={field.value}
+                        onSelect={(date) => {
+                          field.onChange(date);
+                          setIsPopoverOpen(false);
+                        }}
+                        initialFocus
+                        fromDate={
+                          new Date(new Date().setDate(new Date().getDate()))
+                        }
+                      />
+                    </PopoverContent>
+                  </Popover>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {form.watch("date") ? (
               <FormField
                 control={form.control}
-                name="guests"
+                name="time"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-black">No of Guests</FormLabel>
+                    <FormLabel className="text-[#FBEAD2]">Time</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
-                        <SelectTrigger className="h-12 border-muted bg-transparent text-black">
-                          <SelectValue placeholder="Select guests" />
+                        <SelectTrigger className="h-12 border-muted bg-transparent text-[#FBEAD2]">
+                          <SelectValue
+                            placeholder={
+                              form.watch("time")
+                                ? form.watch("time")
+                                : "Select time"
+                            }
+                          />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="max-h-[300px]">
-                        {guestNumbers.map((num) => (
-                          <SelectItem
-                            key={num}
-                            value={num.toString()}
-                            className="text-black"
-                          >
-                            {num} {num === 1 ? "Guest" : "Guests"}
+                        {generateTimeSlots().map((time) => (
+                          <SelectItem key={time} value={time}>
+                            {time}
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -187,102 +265,20 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
                   </FormItem>
                 )}
               />
-
-              <FormField
-                control={form.control}
-                name="date"
-                render={({ field }) => (
-                  <FormItem className="">
-                    <FormLabel className="text-black">Date</FormLabel>
-                    <Popover
-                      open={isPopoverOpen}
-                      onOpenChange={setIsPopoverOpen}
-                    >
-                      <PopoverTrigger asChild>
-                        <FormControl>
-                          <Button
-                            variant={"outline"}
-                            className={`h-12 w-full justify-start border-muted bg-transparent text-left font-normal text-black hover:text-black`}
-                          >
-                            <CalendarIcon className="mr-2 h-4 w-4 text-black" />
-                            {field.value ? (
-                              format(field.value, "PPP")
-                            ) : (
-                              <span className="text-black">Pick a date</span>
-                            )}
-                          </Button>
-                        </FormControl>
-                      </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                          mode="single"
-                          selected={field.value}
-                          onSelect={(date) => {
-                            field.onChange(date);
-                            setIsPopoverOpen(false);
-                          }}
-                          initialFocus
-                          fromDate={
-                            new Date(new Date().setDate(new Date().getDate()))
-                          }
-                        />
-                      </PopoverContent>
-                    </Popover>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              {form.watch("date") ? (
-                <FormField
-                  control={form.control}
-                  name="time"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-black">Time</FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
-                        <FormControl>
-                          <SelectTrigger className="h-12 border-muted bg-transparent text-black">
-                            <SelectValue
-                              placeholder={
-                                form.watch("time")
-                                  ? form.watch("time")
-                                  : "Select time"
-                              }
-                            />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className="max-h-[300px]">
-                          {generateTimeSlots().map((time) => (
-                            <SelectItem key={time} value={time}>
-                              {time}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              ) : (
-                <div></div>
-              )}
-            </div>
+            ) : (
+              <div></div>
+            )}
           </div>
-
           {form.watch("date") && (
             <div className="flex w-full flex-col gap-4 py-12">
-              <p className="text-black">Choose an available time slot:</p>
+              <p className="text-[#FBEAD2]">Choose an available time slot:</p>
               <div className="custom-scrollbar grid h-[250px] grid-cols-2 gap-6 overflow-y-scroll md:grid-cols-4 lg:grid-cols-5">
                 {generateTimeSlots().map((time) => (
                   <div
                     key={time}
                     onClick={() => form.setValue("time", time)}
                     className={cn(
-                      "flex h-full w-full cursor-pointer items-center justify-center border-[1px] border-gray-800 py-4 text-black",
+                      "flex h-full w-full cursor-pointer items-center justify-center border-[1px] border-gray-800 py-4 text-[#FBEAD2]",
                       form.watch("time") === time && "border-primary",
                     )}
                   >
@@ -292,7 +288,10 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
               </div>
             </div>
           )}
-          <Button className="w-fit px-6 py-6" disabled={disable}>
+          <Button
+            className="right-1 w-fit border bg-transparent px-6 py-6 text-[#FBEAD2] ring-[#CDAE64]"
+            disabled={disable}
+          >
             Book A Table
           </Button>
         </form>

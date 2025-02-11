@@ -13,12 +13,12 @@ const JoinUs = ({}) => {
     >
       <div className="flex h-full w-full flex-col-reverse items-center justify-center gap-4 md:flex-row">
         <div className="flex h-full w-full flex-col items-center justify-center gap-[2.5rem] p-6">
-          <h1 className="font-oswald max-w-[500px] text-center text-5xl leading-[60px] text-[#F7F4ED]">
+          <h1 className="font-oswald max-w-[500px] text-center text-5xl leading-[60px] text-[#FBEAD2]">
             Join Us for an
             <br />
             Unforgettable Meal
           </h1>
-          <p className="max-w-[450px] text-center font-light leading-[160%] text-[#F7F4ED]">
+          <p className="max-w-[450px] text-center font-light leading-[160%] text-[#FBEAD2]">
             Ready to experience the finest flavors at LaVita? Whether you`re
             enjoying an intimate dinner or gathering for a special occasion, we
             invite you to savor the artistry behind every dish. Join us and
@@ -27,7 +27,7 @@ const JoinUs = ({}) => {
           <Link href={"/table-booking"}>
             <Button
               variant="outline"
-              className="group w-fit items-center gap-[1.19rem] border-primary bg-transparent px-7 py-7 font-semibold uppercase text-[#F7F4ED] hover:bg-primary"
+              className="group w-fit items-center gap-[1.19rem] border-primary bg-transparent px-7 py-7 font-semibold uppercase text-[#FBEAD2] hover:bg-primary"
             >
               Book Now{" "}
               <Icons.rightArrow className="text-primary duration-300 ease-in-out group-hover:translate-x-1 group-hover:text-primary-foreground" />

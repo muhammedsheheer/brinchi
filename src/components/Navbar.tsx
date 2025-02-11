@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ position = "static" }) => {
             </Link>
             <Link
               className="text-center font-manrope text-sm font-[600] uppercase tracking-[0.96px] text-[#fff]"
-              href={""}
+              href={"/menu"}
             >
               Menu
             </Link>
@@ -51,13 +51,13 @@ const Navbar: React.FC<NavbarProps> = ({ position = "static" }) => {
             </Link>
             <Link
               className="text-center font-manrope text-sm font-[600] uppercase tracking-[0.96px] text-[#fff]"
-              href={""}
+              href={"/about-us"}
             >
               About
             </Link>
             <Link
               className="text-center font-manrope text-sm font-[600] uppercase tracking-[0.96px] text-[#fff]"
-              href={""}
+              href={"/contact"}
             >
               Contact
             </Link>
@@ -76,9 +76,9 @@ const Navbar: React.FC<NavbarProps> = ({ position = "static" }) => {
             </Sidebar>
           </div>
           <div className="hidden lg:block">
-            <Link href={""}>
+            <Link href={"/table-booking"}>
               <Button className="flex flex-row gap-2 rounded-none bg-[#CDAE64] px-5 py-6 font-manrope text-sm font-[600] uppercase tracking-[1.2px] text-[#fff]">
-                Order Now
+                Table Booking
               </Button>
             </Link>
           </div>
