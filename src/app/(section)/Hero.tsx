@@ -49,16 +49,6 @@ const Hero = ({}) => {
             <h3 className="text-center font-playfair text-3xl font-[400] uppercase leading-[80%] tracking-[1px] text-[#FBEAD2] lg:text-5xl lg:tracking-[3px]">
               STEAK HOUSE
             </h3>
-            <h3
-              className="relative font-playfair text-5xl font-semibold italic tracking-wide text-[#CDAE64] lg:text-9xl"
-              ref={textRef}
-            >
-              {"Coming Soon...".split("").map((letter, index) => (
-                <span key={index} className="inline-block opacity-0">
-                  {letter === " " ? "\u00A0" : letter}
-                </span>
-              ))}
-            </h3>
           </div>
         </div>
       </div>

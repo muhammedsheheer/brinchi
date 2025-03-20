@@ -51,7 +51,16 @@ const Reviews = ({}) => {
       <div className="flex h-full w-full flex-col items-start justify-center gap-4 py-12 md:py-24">
         <div className="flex h-full w-full flex-col items-start justify-center gap-2 lg:gap-4">
           <div className="flex w-full flex-col items-center justify-center gap-4 lg:mb-8">
-            <h1 className="review-head w-full text-center font-playfair text-3xl font-[400] leading-[110%] text-[#FBEAD2] lg:text-5xl">
+            <h1
+              className="review-head w-full text-center font-playfair text-3xl font-[400] leading-[110%] lg:text-5xl"
+              style={{
+                background:
+                  "linear-gradient(180deg, #A5894B 68.46%, #221D12 99.87%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               Stories From Brinchi
             </h1>
           </div>

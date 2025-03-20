@@ -18,10 +18,7 @@ export default function HomePage() {
         <Navbar position="absolute" />
         <Hero />
         <Haven />
-        <div className="h-full w-full pb-12 pt-12 lg:pb-48 lg:pt-20">
-          <Menu />
-        </div>
-        <Passion />
+        <Menu />
         <Special />
         <Booking />
         <Reviews />

@@ -8,14 +8,14 @@ import { ArrowRight } from "lucide-react";
 const Footer = ({}) => {
   return (
     <footer className="h-full w-full bg-[#131313] px-4 py-12 md:px-[50px] lg:px-[80px] lg:py-24 2xl:px-[220px]">
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-52">
+      <div className="flex flex-col gap-8 lg:flex-row lg:gap-36">
         <div className="flex flex-col gap-5 lg:gap-24">
           <h2 className="font-playfair text-3xl font-[400] italic text-[#FBEAD2] lg:text-5xl">
             Subscribe to <br />
             our newsletter
           </h2>
-          <div className="flex flex-row gap-14 lg:gap-40">
-            <div className="flex flex-col gap-3">
+          <div className="flex flex-row gap-14 lg:gap-36">
+            <div className="flex flex-col gap-2">
               <Link href={"/"}>
                 <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
                   Home
@@ -43,7 +43,7 @@ const Footer = ({}) => {
               </Link>
             </div>
             <div className="flex flex-col gap-6 lg:gap-10">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 <h6 className="font-manrope text-base font-[700] uppercase tracking-[1px] text-[#FBEAD2]">
                   Contact
                 </h6>
@@ -58,7 +58,7 @@ const Footer = ({}) => {
                   </span>
                 </Link>
                 <Link href={""} target="_blank">
-                  <span className="font-manrope text-sm font-[400] tracking-[1px] text-[#FBEAD2]">
+                  <span className="font-manrope text-sm font-[400] tracking-[0.5px] text-[#FBEAD2]">
                     $9 Allerton Rd, Liverpool L25 7RE
                   </span>
                 </Link>

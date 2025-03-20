@@ -12,7 +12,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ position = "static" }) => {
   return (
     <section
-      className={`${position} top-5 z-50 flex h-[10vh] w-full items-center bg-transparent px-2 py-2 transition-all duration-300 ease-in-out lg:px-[80px]`}
+      className={`${position} top-5 z-50 flex h-[10vh] w-full items-center bg-transparent px-2 py-2 transition-all duration-300 ease-in-out md:mt-2 lg:px-[80px]`}
     >
       <div className="flex w-full flex-col gap-0">
         <div className="flex w-full flex-row items-center justify-between px-4 md:px-10">
@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ position = "static" }) => {
                 width={228}
                 height={78}
                 alt="logo"
-                className="w-24"
+                className="w-28"
               />
             </Link>
           </div>
@@ -78,7 +78,7 @@ const Navbar: React.FC<NavbarProps> = ({ position = "static" }) => {
           <div className="hidden lg:block">
             <Link href={"/table-booking"}>
               <Button className="flex flex-row gap-2 rounded-none bg-[#CDAE64] px-5 py-6 font-manrope text-sm font-[600] uppercase tracking-[1.2px] text-[#fff]">
-                Table Booking
+                Order now{" "}
               </Button>
             </Link>
           </div>
