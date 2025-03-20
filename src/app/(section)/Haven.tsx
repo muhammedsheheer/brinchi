@@ -28,9 +28,9 @@ const Haven: React.FC = () => {
           >
             B{" "}
           </h1>{" "}
-          <div className="hidden flex-col items-center justify-end gap-2 lg:mb-14 lg:mr-4 lg:flex">
+          <div className="hidden flex-col items-center justify-end gap-2 lg:mb-14 lg:flex">
             <h1
-              className="w-full font-playfair text-8xl font-[400] lowercase leading-[110%] lg:text-9xl lg:tracking-[10px]"
+              className="w-full font-playfair text-8xl font-[400] lowercase leading-[110%] lg:mr-16 lg:text-9xl lg:tracking-[10px]"
               style={{
                 background:
                   "linear-gradient(180deg, #CCAD64 0%, #191919  100%)",
@@ -41,7 +41,7 @@ const Haven: React.FC = () => {
             >
               RINCHI
             </h1>
-            <p className="max-w-[450px] font-manrope font-[300] leading-[160%] text-[#C1B6A6]">
+            <p className="max-w-[400px] font-manrope font-[300] leading-[160%] text-[#C1B6A6] lg:mr-[70px]">
               Welcome to Brinchi, where every meal is a celebration of flavor.
               Specializing in premium steaks, artisanal pizzas, and decadent
               desserts, Brinchi delights in crafting culinary experiences that
